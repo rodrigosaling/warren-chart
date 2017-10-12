@@ -17,15 +17,15 @@ for (var i = 0; i < warrenFundPerformance.chart.label.length; i++) {
   chartData2.push({
     date: warrenFundPerformance.chart.label[i],
     // https://stackoverflow.com/a/12830454/785985
-    FWRF1: +(warrenFundPerformance.chart.data.FWRF1[i]*100).toFixed(2),
-    FWMM1: +(warrenFundPerformance.chart.data.FWMM1[i]*100).toFixed(2),
-    FWMM2: +(warrenFundPerformance.chart.data.FWMM2[i]*100).toFixed(2),
-    FWMM3: +(warrenFundPerformance.chart.data.FWMM3[i]*100).toFixed(2),
-    FWMM4: +(warrenFundPerformance.chart.data.FWMM4[i]*100).toFixed(2),
-    CDI: +(cdi).toFixed(2)
+    FWRF1: +(warrenFundPerformance.chart.data.FWRF1[i]*100),
+    FWMM1: +(warrenFundPerformance.chart.data.FWMM1[i]*100),
+    FWMM2: +(warrenFundPerformance.chart.data.FWMM2[i]*100),
+    FWMM3: +(warrenFundPerformance.chart.data.FWMM3[i]*100),
+    FWMM4: +(warrenFundPerformance.chart.data.FWMM4[i]*100),
+    CDI: +(cdi)
   });
   // cdi += 0.031059;
-  cdi += +(cdiPerformance[i]).toFixed(2);
+  cdi += cdiPerformance[i];
 }
 
 var chart2 = AmCharts.makeChart( 'chartdiv2', {
