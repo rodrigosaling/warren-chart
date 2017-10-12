@@ -67,8 +67,9 @@ var chart2 = AmCharts.makeChart( 'chartdiv2', {
       "valueField": "FWRF1",
       'bulletSize': 5,
       'hideBulletsCount': 50,
-      color: '#ee2e5d',
-      precision: 2
+      lineColor: '#ee2e5d',
+      precision: 2,
+      lineThickness: 2
     },
     {
       "bullet": "round",
@@ -77,8 +78,9 @@ var chart2 = AmCharts.makeChart( 'chartdiv2', {
       "valueField": "FWMM1",
       'bulletSize': 5,
       'hideBulletsCount': 50,
-      color: '#ff9001',
-      precision: 2
+      lineColor: '#ff9001',
+      precision: 2,
+      lineThickness: 2
     },
     {
       "bullet": "round",
@@ -87,8 +89,9 @@ var chart2 = AmCharts.makeChart( 'chartdiv2', {
       "valueField": "FWMM2",
       'bulletSize': 5,
       'hideBulletsCount': 50,
-      color: '#00b563',
-      precision: 2
+      lineColor: '#00b563',
+      precision: 2,
+      lineThickness: 2
     },
     {
       "bullet": "round",
@@ -97,8 +100,9 @@ var chart2 = AmCharts.makeChart( 'chartdiv2', {
       "valueField": "FWMM3",
       'bulletSize': 5,
       'hideBulletsCount': 50,
-      color: '#0581ff',
-      precision: 2
+      lineColor: '#0581ff',
+      precision: 2,
+      lineThickness: 2
     },
     {
       "bullet": "round",
@@ -107,8 +111,9 @@ var chart2 = AmCharts.makeChart( 'chartdiv2', {
       "valueField": "FWMM4",
       'bulletSize': 5,
       'hideBulletsCount': 50,
-      color: '#6960da',
-      precision: 2
+      lineColor: '#6960da',
+      precision: 2,
+      lineThickness: 2
     },
     {
       "bullet": "round",
@@ -117,8 +122,9 @@ var chart2 = AmCharts.makeChart( 'chartdiv2', {
       "valueField": "CDI",
       'bulletSize': 5,
       'hideBulletsCount': 50,
-      color: '#000000',
-      precision: 2
+      lineColor: '#000000',
+      precision: 2,
+      lineThickness: 2
     }
   ]
 });
