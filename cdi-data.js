@@ -1,7 +1,7 @@
 // https://www.euqueroinvestir.com/cdi-certificado-de-deposito-interbancario/
 var cdiValueChanges = [
-  // {date: '2016-10-13', value: 0}, // Everything starts at zero
-  {date: '2016-10-13', value: 14.13},
+  {date: '2016-10-13', value: 0}, // Everything starts at zero
+  {date: '2016-10-14', value: 14.13},
   {date: '2016-10-20', value: 13.88},
   {date: '2016-12-01', value: 13.63},
   {date: '2017-01-12', value: 12.88},
