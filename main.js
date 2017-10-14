@@ -103,7 +103,7 @@ for (var i = 0; i < warrenFundPerformance.chart.label.length; i++) {
 
 
 
-var chart2 = AmCharts.makeChart( 'chartdiv2', {
+var chart = AmCharts.makeChart( 'chartdiv', {
   type: 'serial',
   dataProvider: chartData2,
   "categoryField": "date",
