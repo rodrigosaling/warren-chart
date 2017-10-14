@@ -15,9 +15,5 @@
     "funds"
   ],
   "author": "Rodrigo Saling",
-  "license": "MIT",
-  "dependencies": {
-    "amcharts3": "^3.21.2",
-    "lodash": "^4.17.4"
-  }
+  "license": "MIT"
 }
