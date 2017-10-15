@@ -101,7 +101,6 @@ for (var i = 0; i < warrenFundPerformance.chart.label.length; i++) {
     // cdi = cdi.truncate(16);
     // cdi = Math.round10(cdi, -12);
     cdi = Math.ceil10(cdi * (cdiPerformance[i + 1]), -9);
-    // cdi = strint.mul(cdi, (cdiPerformance[i + 1]));
   }
 }
 
