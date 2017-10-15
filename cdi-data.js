@@ -13,6 +13,7 @@ var cdiValueChanges = [
   //-----
   {date: '1998-01-01', value: 0}, // Everything starts at zero
   {date: '2016-10-14', value: 14.13},
+  // Values 1 day after the true change
   {date: '2016-10-21', value: 13.88},
   {date: '2016-12-02', value: 13.63},
   {date: '2017-01-13', value: 12.88},

@@ -68,6 +68,7 @@ Number.prototype.truncate = function(digits) {
 var chartData2 = [];
 var cdi = 1;
 var cdiPerformance = [];
+// var strint = strint();
 
 // Build the CDI array
 for (var i = 0; i < warrenFundPerformance.chart.label.length; i++) {
@@ -77,7 +78,7 @@ for (var i = 0; i < warrenFundPerformance.chart.label.length; i++) {
   // http://minhaseconomias.com.br/blog/investimentos/como-calcular-o-rendimento-de-seu-investimento-em-de-cdi
   // http://estatisticas.cetip.com.br/astec/di_documentos/metodologia2_i1.htm
   cdiPerformance.push(
-    /*Math.round10(*/(1 + (Math.pow((1+monthlyValue.value/100), 1/252)-1) * 100/100).truncate(16)/*, -8)*/
+    ''+/*Math.round10(*/(1 + (Math.pow((1+monthlyValue.value/100), 1/252)-1) * 100/100).truncate(16)/*, -8)*/
     );
 }
 
@@ -100,6 +101,7 @@ for (var i = 0; i < warrenFundPerformance.chart.label.length; i++) {
     // cdi = cdi.truncate(16);
     // cdi = Math.round10(cdi, -12);
     cdi = Math.ceil10(cdi * (cdiPerformance[i + 1]), -9);
+    // cdi = strint.mul(cdi, (cdiPerformance[i + 1]));
   }
 }
 
