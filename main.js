@@ -78,7 +78,7 @@ for (var i = 0; i < warrenFundPerformance.chart.label.length; i++) {
   // http://minhaseconomias.com.br/blog/investimentos/como-calcular-o-rendimento-de-seu-investimento-em-de-cdi
   // http://estatisticas.cetip.com.br/astec/di_documentos/metodologia2_i1.htm
   cdiPerformance.push(
-    ''+/*Math.round10(*/(1 + (Math.pow((1+monthlyValue.value/100), 1/252)-1) * 100/100).truncate(16)/*, -8)*/
+    /*Math.round10(*/(1 + (Math.pow((1+monthlyValue.value/100), 1/252)-1) * 100/100).toString()/*.truncate(16)*//*, -8)*/
     );
 }
 
@@ -94,13 +94,14 @@ for (var i = 0; i < warrenFundPerformance.chart.label.length; i++) {
     FWMM2: +(warrenFundPerformance.chart.data.FWMM2[i]*100),
     FWMM3: +(warrenFundPerformance.chart.data.FWMM3[i]*100),
     FWMM4: +(warrenFundPerformance.chart.data.FWMM4[i]*100),
-    CDI: (((Math.round10(cdi,-8)-1).truncate(8))*100)
+    CDI: (((Math.round10(parseFloat(cdi),-9)-1).truncate(8))*100)
   });
   if (i < warrenFundPerformance.chart.label.length-1) {
     // cdi *= (cdiPerformance[i + 1])/*.truncate(16)*/;
     // cdi = cdi.truncate(16);
     // cdi = Math.round10(cdi, -12);
-    cdi = Math.ceil10(cdi * (cdiPerformance[i + 1]), -9);
+    // cdi = Math.ceil10(cdi * (cdiPerformance[i + 1]), -9);
+    cdi = strint.mul(cdi, cdiPerformance[i + 1]).substr(0, 18); // '1.' + 16
   }
 }
 
