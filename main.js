@@ -1,5 +1,6 @@
-//-----------------------------
-// Closure
+/**
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round
+ */
 (function(){
 
   /**
@@ -51,9 +52,9 @@
 })();
 //-----------------------------
 // https://stackoverflow.com/a/22468007/785985
+// This one does not work well
 Math.truncate = function(number, places) {
   var shift = Math.pow(10, places);
-
   return ((number * shift) | 0) / shift;
 };
 
@@ -76,11 +77,11 @@ for (var i = 0; i < warrenFundPerformance.chart.label.length; i++) {
   // http://minhaseconomias.com.br/blog/investimentos/como-calcular-o-rendimento-de-seu-investimento-em-de-cdi
   // http://estatisticas.cetip.com.br/astec/di_documentos/metodologia2_i1.htm
   cdiPerformance.push(
-    (1 + (Math.pow((monthlyValue.value/100+1), 1/252)-1) * 100/100).truncate(16)
+    /*Math.round10(*/(1 + (Math.pow((1+monthlyValue.value/100), 1/252)-1) * 100/100).truncate(16)/*, -8)*/
     );
 }
 
-cdi = (Math.round10(cdiPerformance[0], -8));
+cdi = (/*Math.round10(*/cdiPerformance[0]/*, -8)*/);
 
 for (var i = 0; i < warrenFundPerformance.chart.label.length; i++) {
 
@@ -92,11 +93,13 @@ for (var i = 0; i < warrenFundPerformance.chart.label.length; i++) {
     FWMM2: +(warrenFundPerformance.chart.data.FWMM2[i]*100),
     FWMM3: +(warrenFundPerformance.chart.data.FWMM3[i]*100),
     FWMM4: +(warrenFundPerformance.chart.data.FWMM4[i]*100),
-    CDI: (cdi-1)*100
+    CDI: (((Math.round10(cdi,-8)-1).truncate(8))*100)
   });
   if (i < warrenFundPerformance.chart.label.length-1) {
-    cdi *= (cdiPerformance[i + 1]).truncate(16);
-    cdi = cdi.truncate(16);
+    // cdi *= (cdiPerformance[i + 1])/*.truncate(16)*/;
+    // cdi = cdi.truncate(16);
+    // cdi = Math.round10(cdi, -12);
+    cdi = Math.ceil10(cdi * (cdiPerformance[i + 1]), -9);
   }
 }
 
@@ -199,7 +202,7 @@ var chart = AmCharts.makeChart( 'chartdiv', {
       'bulletSize': 5,
       'hideBulletsCount': 50,
       lineColor: '#000000',
-      precision: 8,
+      precision: 6,
       lineThickness: 2
     }
   ]
