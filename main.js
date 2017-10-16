@@ -94,8 +94,10 @@ for (var i = 0; i < warrenFundPerformance.chart.label.length; i++) {
     FWMM2: +(warrenFundPerformance.chart.data.FWMM2[i]*100),
     FWMM3: +(warrenFundPerformance.chart.data.FWMM3[i]*100),
     FWMM4: +(warrenFundPerformance.chart.data.FWMM4[i]*100),
-    CDI: (Math.round10(parseFloat(cdi)-1,-8)*100)
+    // CDI: (Math.ceil10(parseFloat(cdi)-1,-8)*100)
+    CDI: (Math.ceil10(parseFloat('0'+cdi.substr(1)),-8)*100)
   });
+  // console.log(warrenFundPerformance.chart.label[i], Math.ceil10(parseFloat('0'+cdi.substr(1)),-8)*100, strint.mul(cdi, cdiPerformance[i + 1]).substr(0, 18)  );
   if (i < warrenFundPerformance.chart.label.length-1) {
     // cdi *= (cdiPerformance[i + 1])/*.truncate(16)*/;
     // cdi = cdi.truncate(16);
@@ -103,6 +105,7 @@ for (var i = 0; i < warrenFundPerformance.chart.label.length; i++) {
     // cdi = Math.ceil10(cdi * (cdiPerformance[i + 1]), -9);
     cdi = strint.mul(cdi, cdiPerformance[i + 1]).substr(0, 18); // '1.' + 16
   }
+
 }
 
 
