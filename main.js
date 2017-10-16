@@ -94,7 +94,7 @@ for (var i = 0; i < warrenFundPerformance.chart.label.length; i++) {
     FWMM2: +(warrenFundPerformance.chart.data.FWMM2[i]*100),
     FWMM3: +(warrenFundPerformance.chart.data.FWMM3[i]*100),
     FWMM4: +(warrenFundPerformance.chart.data.FWMM4[i]*100),
-    CDI: (((Math.round10(cdi,-8)-1).truncate(8))*100)
+    CDI: (((Math.ceil10(cdi,-8)-1).truncate(8))*100)
   });
   if (i < warrenFundPerformance.chart.label.length-1) {
     // cdi *= (cdiPerformance[i + 1])/*.truncate(16)*/;
