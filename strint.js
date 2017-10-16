@@ -1,3 +1,5 @@
+//https://raw.githubusercontent.com/MalhotraVijay/strint/master/strint.js
+
 "use strict";
 
 var strint = (function () {
