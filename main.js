@@ -78,11 +78,11 @@ for (var i = 0; i < warrenFundPerformance.chart.label.length; i++) {
   // http://minhaseconomias.com.br/blog/investimentos/como-calcular-o-rendimento-de-seu-investimento-em-de-cdi
   // http://estatisticas.cetip.com.br/astec/di_documentos/metodologia2_i1.htm
   cdiPerformance.push(
-    ''+/*Math.round10(*/(1 + (Math.pow((1+monthlyValue.value/100), 1/252)-1) * 100/100).truncate(16)/*, -8)*/
-    );
+    (1 + (Math.pow((1+monthlyValue.value/100), 1/252)-1) * 100/100).truncate(16)
+  );
 }
 
-cdi = (/*Math.round10(*/cdiPerformance[0]/*, -8)*/);
+cdi = cdiPerformance[0];
 
 for (var i = 0; i < warrenFundPerformance.chart.label.length; i++) {
 
@@ -97,13 +97,10 @@ for (var i = 0; i < warrenFundPerformance.chart.label.length; i++) {
     CDI: (((Math.ceil10(cdi,-8)-1).truncate(8))*100)
   });
   if (i < warrenFundPerformance.chart.label.length-1) {
-    // cdi *= (cdiPerformance[i + 1])/*.truncate(16)*/;
-    // cdi = cdi.truncate(16);
-    // cdi = Math.round10(cdi, -12);
+    // By using ceil and the -9 parameter, we get the most approximate values yet
     cdi = Math.ceil10(cdi * (cdiPerformance[i + 1]), -9);
   }
 }
-
 
 
 
