@@ -65,7 +65,10 @@ Number.prototype.truncate = function(digits) {
 };
 //-----------------------------
 
-$('#updateChart').on('click', function() {
+drawChart();
+
+$('#chartDates').on('submit', function(event) {
+  event.preventDefault();
   drawChart();
 });
 
@@ -84,6 +87,7 @@ function drawChart() {
   var warrenMM3 = 0;
   var warrenMM4 = 0;
   var startDate = document.getElementById('startDate').value;
+  var endDate = document.getElementById('endDate').value;
 
 // Build the performance arrays
   for (var i = 0; i < warrenFundPerformance.chart.label.length; i++) {
@@ -93,7 +97,10 @@ function drawChart() {
     // http://minhaseconomias.com.br/blog/investimentos/como-calcular-o-rendimento-de-seu-investimento-em-de-cdi
     // http://estatisticas.cetip.com.br/astec/di_documentos/metodologia2_i1.htm
     cdiPerformance.push(
-      (1 + (Math.pow((1+monthlyValue.value/100), 1/252)-1) * 100/100).truncate(16)
+      //(1 + (Math.pow((1+monthlyValue.value/100), 1/252)-1) * 100/100).truncate(16)
+      Decimal(1).plus(
+        Decimal(monthlyValue.value).div(100).plus(1).pow(Decimal(1).div(252)).minus(1).toDecimalPlaces(8)
+      ).times(100/100).toDecimalPlaces(16, Decimal.ROUND_DOWN)
     );
 
     // Warren
@@ -106,7 +113,7 @@ function drawChart() {
 
   for (var i = 0; i < warrenFundPerformance.chart.label.length; i++) {
 
-    if (warrenFundPerformance.chart.label[i] >= startDate) {
+    if (warrenFundPerformance.chart.label[i] >= startDate && warrenFundPerformance.chart.label[i] <= endDate) {
       chartData2.push({
         date: warrenFundPerformance.chart.label[i],
         // +().toFixed() from https://stackoverflow.com/a/12830454/785985
@@ -115,11 +122,13 @@ function drawChart() {
         FWMM2: +((warrenMM2) * 100),
         FWMM3: +((warrenMM3) * 100),
         FWMM4: +((warrenMM4) * 100),
-        CDI: (((Math.ceil10(cdi, -8) - 1).truncate(8)) * 100)
+        // CDI: (((Math.ceil10(cdi, -8) - 1).truncate(8)) * 100)
+        CDI: Decimal(cdi).minus(1).toDecimalPlaces(8).times(100).toNumber()
       });
       if (i < warrenFundPerformance.chart.label.length - 1) {
         // By using ceil and the -9 parameter, we get the most approximate values yet
-        cdi = Math.ceil10(cdi * (cdiPerformance[i + 1]), -9);
+        // cdi = Math.ceil10(cdi * (cdiPerformance[i + 1]), -9);
+        cdi = Decimal(cdi).times(cdiPerformance[i + 1]).toDecimalPlaces(16, Decimal.ROUND_DOWN);
       }
       warrenRF1 += warrenRF1Performance[i];
       warrenMM1 += warrenMM1Performance[i];

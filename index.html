@@ -15,15 +15,24 @@
 <h1>Warren Brazil Investment Funds Chart</h1>
 
 <div>
-  <input type="text" id="startDate" value="2017-08-10">
-  <button type="button" id="updateChart">Update</button>
+  <form name="chartDates" id="chartDates">
+    <div><label for="startDate">Start</label></div>
+    <input type="date" id="startDate" value="2016-10-13" min="2016-10-13" max="2017-10-19">
+
+    <div><label for="endDate">End</label></div>
+    <input type="date" id="endDate" value="2017-10-20" min="2016-10-14" max="2017-10-20">
+
+    <button type="submit" id="updateChart">Update chart</button>
+  </form>
 </div>
+
+<p>Data available from 13-Oct-2016 to 20-Oct-2017.</p>
 
 <div id="chartdiv" class="chartdiv"></div>
 
 <p>Updated on: 20-Oct-2017.</p>
 
-<p>Rodrigo Saling's <a href="https://github.com/rodrigosaling/warren-chart">GitHub repository</a> for this project.</p>
+<p><a href="https://github.com/rodrigosaling/warren-chart">GitHub repository</a> for this project.</p>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 
@@ -32,6 +41,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/amcharts/3.21.6/themes/light.js" integrity="sha256-/8ddAVEjLXcC1w4acoVN5Xpp308AmeYauva/ws3o8SE=" crossorigin="anonymous"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js" integrity="sha256-8E6QUcFg1KTnpEU8TFGhpTGHw5fJqB9vCms3OhAYLqw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/decimal.js/7.3.0/decimal.min.js" integrity="sha256-eap3oPWcW9oOUMRGWzNB6iH64FWIXVFgpsCLYMxSgkM=" crossorigin="anonymous"></script>
 
 <script src="warren-data.js"></script>
 <script src="cdi-data.js"></script>
