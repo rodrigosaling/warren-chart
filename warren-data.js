@@ -5,75 +5,75 @@ var warrenFundPerformance =
         "fundId": 1,
         "fund": "FWRF1",
         "fundName": "Fundo Warren RF1",
-        "date": "2017-10-20T00:00:00Z",
-        "quoteValue": 1.10719486,
-        "dailyInterestRate": 0.0002059501,
-        "monthlyInterestRate": 0.0040155458,
-        "yearlyInterestRate": 0.0805474891,
-        "last6MonthsInterestRate": 0.044802139,
-        "last12MonthsInterestRate": 0.1047435114,
-        "sinceBeginningInterestRate": 0.10719486,
-        "fundNetWorthAtDate": 23811625.9,
+        "date": "2017-10-24T00:00:00Z",
+        "quoteValue": 1.1076991,
+        "dailyInterestRate": 0.0002247324,
+        "monthlyInterestRate": 0.0044727957,
+        "yearlyInterestRate": 0.0810395933,
+        "last6MonthsInterestRate": 0.0448607463,
+        "last12MonthsInterestRate": 0.1042467938,
+        "sinceBeginningInterestRate": 0.1076991,
+        "fundNetWorthAtDate": 23996194.95,
         "chart": null
       },
       {
         "fundId": 2,
         "fund": "FWMM1",
         "fundName": "Fundo Warren MM1",
-        "date": "2017-10-20T00:00:00Z",
-        "quoteValue": 1.11733397,
-        "dailyInterestRate": 0.0002415796,
-        "monthlyInterestRate": 0.0049796654,
-        "yearlyInterestRate": 0.0938018941,
-        "last6MonthsInterestRate": 0.051937211,
-        "last12MonthsInterestRate": 0.115232092,
-        "sinceBeginningInterestRate": 0.11733397,
-        "fundNetWorthAtDate": 8367884.45,
+        "date": "2017-10-24T00:00:00Z",
+        "quoteValue": 1.11746872,
+        "dailyInterestRate": -0.0000198122,
+        "monthlyInterestRate": 0.0051008655,
+        "yearlyInterestRate": 0.0939338062,
+        "last6MonthsInterestRate": 0.051215535,
+        "last12MonthsInterestRate": 0.1144072093,
+        "sinceBeginningInterestRate": 0.11746872,
+        "fundNetWorthAtDate": 8419004.72,
         "chart": null
       },
       {
         "fundId": 3,
         "fund": "FWMM2",
         "fundName": "Fundo Warren MM2",
-        "date": "2017-10-20T00:00:00Z",
-        "quoteValue": 1.13625157,
-        "dailyInterestRate": 0.0007924856,
-        "monthlyInterestRate": 0.0065268826,
-        "yearlyInterestRate": 0.1120324376,
-        "last6MonthsInterestRate": 0.0605350517,
-        "last12MonthsInterestRate": 0.1323600899,
-        "sinceBeginningInterestRate": 0.13625157,
-        "fundNetWorthAtDate": 8581565.46,
+        "date": "2017-10-24T00:00:00Z",
+        "quoteValue": 1.13605218,
+        "dailyInterestRate": 0.0002662558,
+        "monthlyInterestRate": 0.0063502568,
+        "yearlyInterestRate": 0.1118372976,
+        "last6MonthsInterestRate": 0.0588128814,
+        "last12MonthsInterestRate": 0.131164227,
+        "sinceBeginningInterestRate": 0.13605218,
+        "fundNetWorthAtDate": 8766105.7,
         "chart": null
       },
       {
         "fundId": 4,
         "fund": "FWMM3",
         "fundName": "Fundo Warren MM3",
-        "date": "2017-10-20T00:00:00Z",
-        "quoteValue": 1.15918935,
-        "dailyInterestRate": 0.0013133807,
-        "monthlyInterestRate": 0.0085342426,
-        "yearlyInterestRate": 0.1331706083,
-        "last6MonthsInterestRate": 0.0733242772,
-        "last12MonthsInterestRate": 0.1527927336,
-        "sinceBeginningInterestRate": 0.15918935,
-        "fundNetWorthAtDate": 9887703.26,
+        "date": "2017-10-24T00:00:00Z",
+        "quoteValue": 1.15845795,
+        "dailyInterestRate": 0.0004188612,
+        "monthlyInterestRate": 0.0078978996,
+        "yearlyInterestRate": 0.132455625,
+        "last6MonthsInterestRate": 0.0703662113,
+        "last12MonthsInterestRate": 0.1507984427,
+        "sinceBeginningInterestRate": 0.15845795,
+        "fundNetWorthAtDate": 10105419.12,
         "chart": null
       },
       {
         "fundId": 5,
         "fund": "FWMM4",
         "fundName": "Fundo Warren MM4",
-        "date": "2017-10-20T00:00:00Z",
-        "quoteValue": 1.18815997,
-        "dailyInterestRate": 0.0022762357,
-        "monthlyInterestRate": 0.0118369581,
-        "yearlyInterestRate": 0.158231319,
-        "last6MonthsInterestRate": 0.0873173627,
-        "last12MonthsInterestRate": 0.1782750436,
-        "sinceBeginningInterestRate": 0.18815997,
-        "fundNetWorthAtDate": 18175015.14,
+        "date": "2017-10-24T00:00:00Z",
+        "quoteValue": 1.18664711,
+        "dailyInterestRate": 0.0008125185,
+        "monthlyInterestRate": 0.0105486066,
+        "yearlyInterestRate": 0.1567565665,
+        "last6MonthsInterestRate": 0.0824100086,
+        "last12MonthsInterestRate": 0.1746512774,
+        "sinceBeginningInterestRate": 0.18664711,
+        "fundNetWorthAtDate": 18481759.6,
         "chart": null
       }
     ],
@@ -89,7 +89,7 @@ var warrenFundPerformance =
     "savingsLast12MonthsInterestRate": 0.06475,
     "chart": {
       "startDate": "2016-10-13",
-      "endDate": "2017-10-20",
+      "endDate": "2017-10-24",
       "label": [
         "2016-10-13",
         "2016-10-14",
@@ -347,7 +347,9 @@ var warrenFundPerformance =
         "2017-10-17",
         "2017-10-18",
         "2017-10-19",
-        "2017-10-20"
+        "2017-10-20",
+        "2017-10-23",
+        "2017-10-24"
       ],
       "data": {
         "FWMM4": [
@@ -605,9 +607,11 @@ var warrenFundPerformance =
           0.18407,
           0.18404,
           0.18276,
-          0.18598,
-          0.18546,
-          0.18816
+          0.18597,
+          0.18544,
+          0.18824,
+          0.18568,
+          0.18665
         ],
         "FWMM3": [
           0,
@@ -864,9 +868,11 @@ var warrenFundPerformance =
           0.15612,
           0.15616,
           0.15569,
+          0.15772,
           0.15769,
-          0.15767,
-          0.15919
+          0.15942,
+          0.15797,
+          0.15846
         ],
         "FWMM2": [
           0,
@@ -1125,7 +1131,9 @@ var warrenFundPerformance =
           0.13387,
           0.13513,
           0.13535,
-          0.13625
+          0.13645,
+          0.13575,
+          0.13605
         ],
         "FWMM1": [
           0,
@@ -1384,7 +1392,9 @@ var warrenFundPerformance =
           0.11597,
           0.11674,
           0.11706,
-          0.11733
+          0.11774,
+          0.11749,
+          0.11747
         ],
         "FWRF1": [
           0,
@@ -1643,9 +1653,10 @@ var warrenFundPerformance =
           0.10614,
           0.10649,
           0.10697,
-          0.10719
+          0.10728,
+          0.10745,
+          0.1077
         ]
       }
     }
-  }
-;
+  };
