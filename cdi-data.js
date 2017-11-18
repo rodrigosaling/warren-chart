@@ -9,7 +9,8 @@ var cdiValueChanges = [
   // {date: '2017-04-13', value: 11.13},
   // {date: '2017-06-01', value: 10.14},
   // {date: '2017-07-27', value: 9.14},
-  // {date: '2017-09-08', value: 8.14}
+  // {date: '2017-09-08', value: 8.14},
+  // {date: '2017-10-26', value: 7.39}
   //-----
   {date: '1998-01-01', value: 0}, // Everything starts at zero
   {date: '2016-10-14', value: 14.13},
@@ -21,7 +22,8 @@ var cdiValueChanges = [
   {date: '2017-04-14', value: 11.13},
   {date: '2017-06-02', value: 10.14},
   {date: '2017-07-28', value: 9.14},
-  {date: '2017-09-09', value: 8.14}
+  {date: '2017-09-09', value: 8.14},
+  {date: '2017-10-27', value: 7.39}
 ];
 
 // How to calculate CDI: (Math.pow((1+<monthly_value>/100), 1/252)-1)*100

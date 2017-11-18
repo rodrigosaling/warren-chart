@@ -50,6 +50,25 @@ for (var i = 0; i < warrenFundPerformance.chart.label.length; i++) {
   warrenMM4Performance.push(warrenFundPerformance.chart.data.FWMM4[i] - warrenFundPerformance.chart.data.FWMM4[i-1] || 0);
 }
 
+moment.locale('pt-br');
+var chartStartDate = moment(warrenFundPerformance.chart.startDate);
+var chartEndDate = moment(warrenFundPerformance.chart.endDate);
+
+$('#startDate').attr({
+  value: chartStartDate.format('YYYY-MM-DD'),
+  min: chartStartDate.format('YYYY-MM-DD'),
+  max: moment(chartEndDate).subtract(1, 'days').format('YYYY-MM-DD')
+});
+$('#endDate').attr({
+  value: chartEndDate.format('YYYY-MM-DD'),
+  min: moment(chartStartDate).add(1, 'days').format('YYYY-MM-DD'),
+  max: chartEndDate.format('YYYY-MM-DD')
+});
+
+$('#chartStartDate').html(chartStartDate.format('D [de] MMMM [de] YYYY'));
+$('#chartEndDate').html(chartEndDate.format('D [de] MMMM [de] YYYY'));
+$('#updatedOn').html(chartEndDate.format('D [de] MMMM [de] YYYY'));
+
 drawChart();
 
 $('#chartDates').on('submit', function(event) {
@@ -198,7 +217,8 @@ function drawChart() {
         'hideBulletsCount': 50,
         lineColor: '#999999',
         precision: 2,
-        lineThickness: 1
+        lineThickness: 1,
+        hidden: true
       },
       {
         "bullet": "round",
@@ -209,7 +229,8 @@ function drawChart() {
         'hideBulletsCount': 50,
         lineColor: '#999999',
         precision: 2,
-        lineThickness: 1
+        lineThickness: 1,
+        hidden: true
       },
       {
         "bullet": "round",
@@ -220,7 +241,8 @@ function drawChart() {
         'hideBulletsCount': 50,
         lineColor: '#999999',
         precision: 2,
-        lineThickness: 1
+        lineThickness: 1,
+        hidden: true
       },
       {
         "bullet": "round",
@@ -231,7 +253,8 @@ function drawChart() {
         'hideBulletsCount': 50,
         lineColor: '#999999',
         precision: 2,
-        lineThickness: 1
+        lineThickness: 1,
+        hidden: true
       }
     ]
   });
