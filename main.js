@@ -14,33 +14,12 @@ for (var i = 0; i < warrenFundPerformance.chart.label.length; i++) {
   var monthlyValue = _.findLast(cdiValueChanges, function(item) {
     return item.date <= warrenFundPerformance.chart.label[i];
   });
-  // http://minhaseconomias.com.br/blog/investimentos/como-calcular-o-rendimento-de-seu-investimento-em-de-cdi
-  // http://estatisticas.cetip.com.br/astec/di_documentos/metodologia2_i1.htm
-  cdi100Performance.push(
-    Decimal(100).div(100).times(
-      Decimal(monthlyValue.value).div(100).plus(1).pow(Decimal(1).div(252)).minus(1).toDecimalPlaces(8)
-    ).plus(1).toDecimalPlaces(16, Decimal.ROUND_DOWN).toString()
-  );
-  cdi90Performance.push(
-    Decimal(90).div(100).times(
-      Decimal(monthlyValue.value).div(100).plus(1).pow(Decimal(1).div(252)).minus(1).toDecimalPlaces(8)
-    ).plus(1).toDecimalPlaces(16, Decimal.ROUND_DOWN).toString()
-  );
-  cdi110Performance.push(
-    Decimal(110).div(100).times(
-      Decimal(monthlyValue.value).div(100).plus(1).pow(Decimal(1).div(252)).minus(1).toDecimalPlaces(8)
-    ).plus(1).toDecimalPlaces(16, Decimal.ROUND_DOWN).toString()
-  );
-  cdi120Performance.push(
-    Decimal(120).div(100).times(
-      Decimal(monthlyValue.value).div(100).plus(1).pow(Decimal(1).div(252)).minus(1).toDecimalPlaces(8)
-    ).plus(1).toDecimalPlaces(16, Decimal.ROUND_DOWN).toString()
-  );
-  cdi130Performance.push(
-    Decimal(130).div(100).times(
-      Decimal(monthlyValue.value).div(100).plus(1).pow(Decimal(1).div(252)).minus(1).toDecimalPlaces(8)
-    ).plus(1).toDecimalPlaces(16, Decimal.ROUND_DOWN).toString()
-  );
+
+  cdi100Performance.push(calcCDI(monthlyValue.value, 100));
+  cdi90Performance.push(calcCDI(monthlyValue.value, 90));
+  cdi110Performance.push(calcCDI(monthlyValue.value, 110));
+  cdi120Performance.push(calcCDI(monthlyValue.value, 120));
+  cdi130Performance.push(calcCDI(monthlyValue.value, 130));
 
   // Warren
   warrenRF1Performance.push(warrenFundPerformance.chart.data.FWRF1[i] - warrenFundPerformance.chart.data.FWRF1[i-1] || 0);
@@ -65,9 +44,11 @@ $('#endDate').attr({
   max: chartEndDate.format('YYYY-MM-DD')
 });
 
-$('#chartStartDate').html(chartStartDate.format('D [de] MMMM [de] YYYY'));
-$('#chartEndDate').html(chartEndDate.format('D [de] MMMM [de] YYYY'));
-$('#updatedOn').html(chartEndDate.format('D [de] MMMM [de] YYYY'));
+var dateFormat = 'D [de] MMMM [de] YYYY';
+
+$('#chartStartDate').html(chartStartDate.format(dateFormat));
+$('#chartEndDate').html(chartEndDate.format(dateFormat));
+$('#updatedOn').html(chartEndDate.format(dateFormat));
 
 drawChart();
 
@@ -76,6 +57,18 @@ $('#chartDates').on('submit', function(event) {
   drawChart();
 });
 
+/**
+ * http://minhaseconomias.com.br/blog/investimentos/como-calcular-o-rendimento-de-seu-investimento-em-de-cdi
+ * http://estatisticas.cetip.com.br/astec/di_documentos/metodologia2_i1.htm
+ * 
+ * How to calculate CDI: (Math.pow((1+<monthly_value>/100), 1/252)-1)*100
+ * @param percentage
+ */
+function calcCDI(monthlyValue, percentage) {
+  return Decimal(percentage).div(100).times(
+    Decimal(monthlyValue).div(100).plus(1).pow(Decimal(1).div(252)).minus(1).toDecimalPlaces(8)
+  ).plus(1).toDecimalPlaces(16, Decimal.ROUND_DOWN).toString();
+}
 
 function drawChart() {
   var chartData = [];
