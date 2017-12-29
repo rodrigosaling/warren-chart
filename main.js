@@ -60,8 +60,8 @@ $('#chartDates').on('submit', function(event) {
 /**
  * http://minhaseconomias.com.br/blog/investimentos/como-calcular-o-rendimento-de-seu-investimento-em-de-cdi
  * http://estatisticas.cetip.com.br/astec/di_documentos/metodologia2_i1.htm
- * 
- * How to calculate CDI: (Math.pow((1+<monthly_value>/100), 1/252)-1)*100
+ *
+ * @param monthlyValue
  * @param percentage
  */
 function calcCDI(monthlyValue, percentage) {
